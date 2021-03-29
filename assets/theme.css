@@ -1157,6 +1157,11 @@ select,
   button {
     font-size: 16px; } }
 
+/*================ Custom text colors ================*/
+.text-pink {
+  color: var(--color-sale-text);
+}
+
 /*================ Headings ================*/
 h3, .h3,
 h4,
@@ -4820,7 +4825,8 @@ hr {
 .site-header__mobile-nav {
   z-index: 11;
   position: relative;
-  background-color: var(--color-body); }
+  background-color: var(--color-body); 
+}
   @media only screen and (max-width: 749px) {
     .site-header__mobile-nav {
       display: -webkit-flex;
@@ -6996,3 +7002,8 @@ hr {
 
 .store-availability-list__phone {
   margin-bottom: 0; }
+
+/* img rounded */
+.img-rounded {
+  border-radius: 50%;
+}
