@@ -54,7 +54,58 @@
     {% endif %}
   {% endif %}
 
-  <header class="site-header{% if section.settings.align_logo == 'left' %} border-bottom logo--left{% else %} logo--center{% endif %}" role="banner">
+  {% if request.page_type == 'index' %}
+    <style>
+      .site-header-index {
+        background: radial-gradient(129.95% 369.63% at -24.86% -54.82%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #FAEEE0;
+      }
+      /*
+      .site-header-index {
+        position: absolute;
+        padding: 0 55px;
+        z-index: 6;
+        background: radial-gradient(129.95% 369.63% at -24.86% -54.82%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #FAEEE0;
+      }
+      @media only screen and (max-width: 749px) {
+        .site-header-index {
+          position: relative;
+          padding: 0;
+        }
+      } */
+      .top-hero-homepage:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(129.95% 369.63% at -24.86% -54.82%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #FAEEE0;
+        z-index: -1;
+        transform: skewY(6deg);
+        transform-origin: top right;
+        padding: 10rem 0;
+      }
+      .site-header__mobile-nav {
+        background: radial-gradient(129.95% 369.63% at -24.86% -54.82%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #FAEEE0;;
+      }
+
+      @media only screen and (min-width: 750px) {
+        .site-header {
+              padding: 0 55px 85px;
+          }
+      }
+      .top-hero-homepage {
+        position: relative;
+      }
+      .main-content {
+        padding-top: 0;
+      }
+    </style>
+  {% endif %}
+
+  <header class="site-header-index site-header{% if section.settings.align_logo == 'left' %} logo--left{% else %} logo--center{% endif %}" role="banner">
     <div class="grid grid--no-gutters grid--table site-header__mobile-nav">
       {% if section.settings.align_logo == 'center' %}
         {%- assign logo_classes = 'medium-up--one-third medium-up--push-one-third logo-align--center' -%}
