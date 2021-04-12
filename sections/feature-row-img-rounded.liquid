@@ -1,4 +1,4 @@
-<div class="top-hero-homepage">
+<div class="top-section has-light-background">
   <div class="page-width">
     {% capture image_layout %}
       <div class="feature-row__item">
@@ -6,7 +6,7 @@
           {% capture img_id %}FeatureRowImage-{{ section.id }}{% endcapture %}
           {% capture wrapper_id %}FeatureRowImageWrapper-{{ section.id }}{% endcapture %}
           {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-          {% include 'image-style', image: section.settings.image, height: 300, wrapper_id: wrapper_id, img_id: img_id %}
+          {% render 'image-style', image: section.settings.image, height: 300, wrapper_id: wrapper_id, img_id: img_id %}
           <div id="{{ wrapper_id }}" class="feature-row__image-wrapper js">
             <div style="padding-top:{{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100}}%;" data-image-loading-animation>
               <img id="{{ img_id }}"
@@ -65,6 +65,25 @@
       {% endif %}
     </div>
   </div>
+<!--
+<svg viewBox="0 0 1440 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M1440 0H0V610.573L1440 760V0Z" fill="#FAEEE0" />
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M1440 0H0V610.573L1440 760V0Z" fill="url(#paint0_radial)" />
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(-358 -416.615) rotate(33.117) scale(1807.64 3375.21)">
+      <stop stop-color="white" />
+      <stop offset="1" stop-color="white" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+</svg>
+-->
+
+
+
+
+
+
 </div>
 
 
