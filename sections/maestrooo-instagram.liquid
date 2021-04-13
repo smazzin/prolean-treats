@@ -40,8 +40,7 @@ what you are doing, as you may break the app.
 }
 {%- endcapture -%}
 
-<div class="bottom-section">
-<div class="ooo-instagram" data-section-id="{{ section.id }}" data-section-type="app-section-feed" data-section-settings='{{ section_settings }}'>
+<div class="ooo-instagram sectionInner" data-section-id="{{ section.id }}" data-section-type="app-section-feed" data-section-settings='{{ section_settings }}'>
     <div class="ooo-instagram-container instagram-homepage-content">
       {%- if section.settings.title != blank or section.settings.subheading != blank -%}
         <header class="ooo-instagram-header">
@@ -123,22 +122,6 @@ what you are doing, as you may break the app.
         </div>
       {%- endif -%}
     </div>
-  </div>
-  {%- comment -%}
-  <svg viewBox="0 0 1440 680" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M1440 680L0 680L-4.77592e-05 133.698L1440 -3.81849e-06L1440 680Z"
-      fill="#C0DEDF" />
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M1440 680L0 680L-4.77592e-05 133.698L1440 -3.81849e-06L1440 680Z"
-      fill="url(#paint0_radial)" />
-    <defs>
-      <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-        gradientTransform="translate(438 655) rotate(-15.0955) scale(1259.46 2782.81)">
-        <stop stop-color="white" stop-opacity="0.37" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
-      </radialGradient>
-    </defs>
-  </svg>
-  {%- endcomment -%}
   {%- comment -%}
   We provide a base styles. Then, our JS will inject automatically, based on the theme we detect, extra styles to match the look&feel of the theme.
   {%- endcomment -%}
@@ -177,8 +160,9 @@ what you are doing, as you may break the app.
 
     /* Section and container */
     [data-section-id="{{ section.id }}"] {
-      margin: var(--ooo-instagram-section-vertical-margin) 0;
+      /*margin: var(--ooo-instagram-section-vertical-margin) 0;
       padding: var(--ooo-instagram-section-vertical-padding) 0;
+      */
     }
 
     [data-section-id="{{ section.id }}"] * {
@@ -207,6 +191,7 @@ what you are doing, as you may break the app.
 
     [data-section-id="{{ section.id }}"] .ooo-instagram-header__subheading {
       color: {{ section.settings.subheading_color }};
+      font-weight: bold;
     }
 
     [data-section-id="{{ section.id }}"] .ooo-instagram-header__subheading a {
@@ -471,6 +456,7 @@ what you are doing, as you may break the app.
     "fr": "Flux Instagram",
     "ja": "Instagramフィード"
   },
+  "class": "index-section section bg-light-blue",
   "settings": [
     {
       "type": "text",
